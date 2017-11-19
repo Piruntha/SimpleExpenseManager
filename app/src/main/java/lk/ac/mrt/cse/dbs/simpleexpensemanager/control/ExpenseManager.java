@@ -29,10 +29,7 @@ import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.model.Account;
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.model.ExpenseType;
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.model.Transaction;
 
-/**
- * The ExpenseManager acts as the mediator when performing transactions. This is an abstract class with an abstract
- * method to setup the DAO objects depending on the implementation.
- */
+
 public abstract class ExpenseManager implements Serializable {
     private AccountDAO accountsHolder;
     private TransactionDAO transactionsHolder;
@@ -76,7 +73,7 @@ public abstract class ExpenseManager implements Serializable {
      * @return
      */
     public List<Transaction> getTransactionLogs() {
-        return transactionsHolder.getPaginatedTransactionLogs(10);
+        return transactionsHolder.getAllTransactionLogs();
     }
 
     /***
